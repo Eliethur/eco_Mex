@@ -14,8 +14,8 @@
         
         <div class="relative">
             <img class="w-full h-56 object-cover" 
-                 src="{% if viaje.imagen %}{{ viaje.imagen.url }}{% else %}https://placehold.co/600x400/22c55e/FFFFFF?text={{ viaje.destino|truncatechars:15 }}{% endif %}" 
-                 alt="Imagen de {{ viaje.destino }}">
+                src="{% if viaje.imagen %}{{ viaje.imagen.url }}{% else %}https://placehold.co/600x400/22c55e/FFFFFF?text={{ viaje.destino|truncatechars:15 }}{% endif %}" 
+                alt="Imagen de {{ viaje.destino }}">
             <span class="absolute top-3 right-3 bg-green-600 text-white text-xs font-semibold px-3 py-1 rounded-full">Próximo</span>
         </div>
         <div class="p-6 flex flex-col flex-grow">
@@ -40,13 +40,13 @@
 
             <div class="mt-auto">
                 <a href="{% url 'formulario_preinscripcion' %}?viaje={{ viaje.id }}" 
-                   class="
-                     block w-full text-center bg-green-600 text-white font-bold 
-                     py-3 px-6 rounded-lg shadow-lg 
-                     transition-transform duration-300 
-                     hover:bg-green-700 hover:scale-105"
+                class="
+                    block w-full text-center bg-green-600 text-white font-bold 
+                    py-3 px-6 rounded-lg shadow-lg 
+                    transition-transform duration-300 
+                    hover:bg-green-700 hover:scale-105"
                 >
-                  Inscribirse
+                Inscribirse
                 </a>
             </div>
         </div>

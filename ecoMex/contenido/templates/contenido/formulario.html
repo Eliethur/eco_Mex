@@ -3,7 +3,14 @@
 {% block title %}Formulario de Pre-inscripción{% endblock %}
 
 {% block content %}
-<div class="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+<div class="min-h-screen relative flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+    
+    <a href="{% url 'viajes_proximos' %}" class="absolute top-6 left-6 flex items-center text-gray-600 hover:text-green-600 transition duration-300 font-medium">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+        </svg>
+        Regresar
+    </a>
     <div class="max-w-md w-full bg-white p-8 md:p-10 rounded-2xl shadow-xl">
         
         <div>
@@ -15,10 +22,6 @@
 
         <form class="mt-8 space-y-6" action="{% url 'formulario_preinscripcion' %}" method="POST">
             {% csrf_token %}
-            
-            {% if viaje_seleccionado %}
-                <input type="hidden" name="viaje_id" value="{{ viaje_seleccionado.id }}">
-            {% endif %}
 
             <div>
                 <label for="nombre" class="block text-sm font-medium text-gray-700">Nombre completo *</label>
